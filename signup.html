@@ -1,0 +1,19 @@
+<input id="name" placeholder="Name">
+<input id="email" placeholder="Email">
+<input id="password" type="password" placeholder="Password">
+<button onclick="signup()">Create Account</button>
+
+<script>
+async function signup(){
+  await fetch("http://localhost:5000/signup",{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body: JSON.stringify({
+      name:name.value,
+      email:email.value,
+      password:password.value
+    })
+  });
+  alert("Signup Success 🎉");
+}
+</script>
